@@ -19,7 +19,7 @@ Run the same "lsblk" command, now the newly attached volume will also show up
 
 Format the newly attached volume "mkfs -t ext4 /dev/xvdf"
 
-Create a new repository in the root '/' which you will attach with the volume (e.g. "mkdir /docker-storage")
+Create a new repository in the root '/' where you will mount the EBS volume (e.g. "mkdir /docker-storage")
 
 Now mount the EBS volume "mount /dev/xvdf /docker-storage"
 
@@ -27,7 +27,7 @@ To ensure the volume is remounted after a reboot, we update /etc/fstab
 echo '/dev/xvdf /docker-lab ext4 defaults,nofail 0 2' | sudo tee -a /etc/fstab
 
 Run the docker container with newly mounted EBS volume as its persistent storage
-docker run --name my-nginx -v /docker-storage:/usr/share/nginx/html:rw -d -p 80:80 nginx
+(e.g. docker run --name my-nginx -v /docker-storage:/usr/share/nginx/html:rw -d -p 80:80 nginx)
 
 Now the docker-storage on the host machine and /usr/share/nginx/html are synced; whenever you make any changes in one directory, those changes will automatically update the other.
 
