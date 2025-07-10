@@ -15,4 +15,4 @@ Go back on the EC2 terminal and run command "lsblk", only one volume is showing 
 
 Now on AWS console, attach the newly created volume to the EC2 server. Note the device name of the volume. Mine is /dev/xvdf
 Run the same "lsblk" command, now the newly attached volume will also show up
-!(https://github.com/AfsahSiddiqui/DevOps-Skills/blob/main/images/lsblk-aft.png?raw=true)
+![](https://github.com/AfsahSiddiqui/DevOps-Skills/blob/main/images/lsblk-aft.png?raw=true)
