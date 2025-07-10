@@ -6,9 +6,9 @@ In this lab, we will be utilizing AWS EBS service as peristent volume for a Dock
 Have Docker installed on AWS EC2 server
 
 ### Steps to follow:
-Download/pull any image you want to work with (e.g. "docker pull nginx")
-Create an EBS volume in the same region that has the EC2 instance
-Rename the newly created EBS volume for your own ease
+Download/pull any image you want to work with (e.g. "docker pull nginx").
+Create an EBS volume in the same region that has the EC2 instance.
+Rename the newly created EBS volume for your own ease.
 
 Go back on the EC2 terminal and run command "lsblk", only one volume is showing right now
 ![](https://github.com/AfsahSiddiqui/DevOps-Skills/blob/main/images/lsblk-bf.png?raw=true)
