@@ -16,7 +16,7 @@ In this lab, we will be monitoring Docker container running within AWS EC2 serve
   On AWS console, navigate to EC2 instances and select the EC2 instance you're working on. Then select "Actions"->"Security"->"Modify IAM role"
 
   ![](images/send-log-to-cloudwatch1.png)
-  
+
 - Select "Create new IAM role"
 - Click on "New role"
 - Select "AWS Service" for trusted entity type and "EC2" for "service or use case"
