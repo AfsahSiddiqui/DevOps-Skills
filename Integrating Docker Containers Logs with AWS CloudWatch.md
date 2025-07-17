@@ -17,18 +17,18 @@ In this lab, we will be monitoring Docker container running within AWS EC2 serve
 
   ![](images/send-log-to-cloudwatch1.png)
   
-  Select "Create new IAM role"
-  Click on "New role"
-  Select "AWS Service" for trusted entity type and "EC2" for "service or use case"
-  Click Next
-  Search for CloudWatch logs full access, select the permission -> Next
-  Type in the name for this role (e.g. send-dockerlogs-to-cloudwatch" and then create role
-  Now on the Modify IAM role page/tab, select the newly created role from dropdown menu
+- Select "Create new IAM role"
+- Click on "New role"
+- Select "AWS Service" for trusted entity type and "EC2" for "service or use case"
+- Click Next
+- Search for CloudWatch logs full access, select the permission -> Next
+- Type in the name for this role (e.g. send-dockerlogs-to-cloudwatch" and then create role
+- Now on the Modify IAM role page/tab, select the newly created role from dropdown menu
   
   ![](images/create-iamrole-forcloudwatch.png)
 
-  and select update IAM role
-- Back to the EC2 terminal: start the CloudWatch agent "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:config-cloudwatch.json -s"
+- and select update IAM role
+- Back to the EC2 terminal: start the CloudWatch agent "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:config-cloudwatch.json -s". 
   Note: make sure to rename the config file name in above command to the name you've saved your config file with
 - Verify that the CloudWatch agent is running "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status"
 - Now on AWS console, open CloudWatch -> Select Log groups -> Locate "docker-logs"
