@@ -15,7 +15,14 @@ We will enable TLS encryption between client and Docker daemon for a secure conn
 - Create a CSR for the client certificate: "openssl req -subj '/CN=client' -new -key client-key.pem -out client.csr"
 - Sign the client certificate using the CA: "openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out client-cert.pem"
 - Start docker with TLS enabled: "dockerd --tlsverify --tlscacert=ca.pem --tlscert=server-cert.pem --tlskey=server-key.pem -H=0.0.0.0:2376"
+- Docker now has a secure connection, and listens on port 2376
 
-### Securing ECS tasks with AWS IAS
+### Start docker automatically with TLS
 
-- 
+- Edit the docker daemon config file: "sudo nano /etc/docker/daemon.json"
+- Add these lines in the file:
+
+   ![](images/docker-daemon-tls.png)
+
+- Restart docker "sudo systemctl restart docker"
+
