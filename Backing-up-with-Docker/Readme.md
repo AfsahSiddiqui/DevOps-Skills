@@ -1,4 +1,4 @@
-# Creating backup via Docker
+# Automating Backup for a Docker Container and/or Directory on Host Machine
 
 This practical lets you create a backup of either a directory in your host machine or of a docker container.
 
