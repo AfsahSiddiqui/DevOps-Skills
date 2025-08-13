@@ -1,3 +1,3 @@
 # DevOps-Skills
 
-This is a DevOps skills repository, storing miscellenous standalone files/projects that demonstrate skills in their respective categories.
+This DevOps skills repository showcases minilabs on various DevOps tools including Docker, Bash, CI/CD, and AWS services.
